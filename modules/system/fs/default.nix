@@ -11,7 +11,7 @@ in
     type = mkOption {
       description = "Type of boot. Default encrypted-efi";
       default = null;
-      type = types.enum [ "encrypted-efi" "zfs" "zfs-v2" ];
+      type = types.enum [ "encrypted-efi" "zfs" "zfs-v2" "none" ];
     };
 
     hostId = mkOption {
@@ -242,6 +242,14 @@ in
             device = "rpool/persist/data";
             fsType = "zfs";
             neededForBoot = true;
+          };
+        })
+        (mkIf (cfg.type == "ext4") {
+          environment.systemPackages = with pkgs; [ e2fsprogs ];
+
+          fileSystems."/" = {
+            device = "/dev/disk/by-uuid/4abe7223-e94a-4130-a586-26eaa65746ed";
+            fsType = "ext4";
           };
         })
       ];
