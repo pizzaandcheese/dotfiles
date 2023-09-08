@@ -484,7 +484,7 @@
         defaultClientConfig
         {
           boot.type = "uefi";
-          fs.type = "encrypted-efi";
+          fs.type = "ext4";
           initrd.plymouth = {
             enable = true;
             theme = "hexa_retro";
