@@ -11,7 +11,7 @@ in
     type = mkOption {
       description = "Type of boot. Default encrypted-efi";
       default = null;
-      type = types.enum [ "encrypted-efi" "zfs" "zfs-v2" "none" ];
+      type = types.enum [ "encrypted-efi" "zfs" "zfs-v2" "ext4" ];
     };
 
     hostId = mkOption {
