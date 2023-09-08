@@ -8,7 +8,7 @@
     ./monitoring
     ./unbound
     ./acme
-    ./mail-server
+#     ./mail-server
     ./nginx
     ./miniflux
     ./taskserver

@@ -13,13 +13,13 @@ in
     backupPool = mkOption {
       description = "Persisted pool that is backed up";
       type = types.str;
-      default = "/backup/home/jd";
+      default = "/backup/home/ryan";
     };
 
     persistPool = mkOption {
       description = "Persisted pool that is not backed up (eg cache)";
       type = types.str;
-      default = "/persist/home/jd";
+      default = "/persist/home/ryan";
     };
   };
 

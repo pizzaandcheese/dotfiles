@@ -29,8 +29,8 @@
     ./graphical
     ./ssh
     ./services
-    ./wireguard
-    ./secrets
+#     ./wireguard
+     ./secrets
     ./android
     ./windows
     ./users

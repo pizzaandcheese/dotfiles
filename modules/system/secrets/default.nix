@@ -15,7 +15,7 @@ in
 
   config = mkMerge [
     {
-      age.identityPaths = cfg.identityPaths;
+       age.identityPaths = cfg.identityPaths;
     }
     (mkIf config.jd.impermanence.enable {
       environment.persistence.${backup}.files = cfg.identityPaths;

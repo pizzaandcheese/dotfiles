@@ -45,16 +45,16 @@ with builtins; {
           nixpkgs = {
             inherit overlays;
             config = {
-              permittedInsecurePackages = [
-                "electron-9.4.4"
-              ];
+#               permittedInsecurePackages = [
+#                 "electron-9.4.4"
+#               ];
               allowUnfree = true;
             };
           };
 
           home = {
             inherit username;
-            stateVersion = "21.05";
+            stateVersion = "23.11";
             homeDirectory = "/home/${username}";
           };
           systemd.user.startServices = true;

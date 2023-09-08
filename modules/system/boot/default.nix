@@ -52,10 +52,10 @@ in
                 efi /efi/efi-power/reboot.efi
               '';
             };
-            extraFiles = {
-              "efi/efi-power/reboot.efi" = "${pkgs.efi-power}/reboot.efi";
-              "efi/efi-power/poweroff.efi" = "${pkgs.efi-power}/poweroff.efi";
-            };
+#             extraFiles = {
+#               "efi/efi-power/reboot.efi" = "${pkgs.efi-power}/reboot.efi";
+#               "efi/efi-power/poweroff.efi" = "${pkgs.efi-power}/poweroff.efi";
+#             };
           };
         };
       };

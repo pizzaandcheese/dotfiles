@@ -19,7 +19,7 @@ in
 
     time = mkOption {
       description = "Time zone (null if unmanaged)";
-      type = with types; nullOr (enum [ "west" "east" ]);
+      type = with types; nullOr (enum [ "west" "east" "central" ]);
       default = "east";
     };
 
@@ -46,12 +46,11 @@ in
         (
           if (cfg.time == "east")
           then "US/Eastern"
-          else
-            (
-              if cfg.time == "west"
+          else if cfg.time == "west"
               then "US/Pacific"
-              else "Asia/Bangkok"
-            )
+          else if cfg.time == "central"
+            then "US/Central"
+            else "Asia/Bangkok"
         );
 
     # Nix search paths/registries from:

@@ -56,7 +56,7 @@ with utils; {
       systemConfigStripped =
         removeModuleOptions
           {
-            path = impermanencePath;
+             path = impermanencePath;
             activate = enable;
           }
           (removeAttrByPath qemuPath systemConfig);
@@ -91,8 +91,8 @@ with utils; {
             nix.settings.max-jobs = lib.mkDefault cpuCores;
           }
           inputs.agenix.nixosModules.age
-          inputs.simple-nixos-mailserver.nixosModule
-          inputs.impermanence.nixosModule
+#           inputs.simple-nixos-mailserver.nixosModule
+           inputs.impermanence.nixosModule
           passthru
         ]
         ++ (systemEnableModule (import (inputs.nixpkgs + "/nixos/modules/profiles/qemu-guest.nix")) qemuPath);
