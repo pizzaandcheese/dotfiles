@@ -14,7 +14,7 @@
 , impermanence
 , nixpkgs-wayland
 , agenix
-# , secrets
+, secrets
 # , efi-power
 ,
 }: {

@@ -22,6 +22,7 @@ in
     }
     (mkIf persist.enable {
       home.persistence.${persist.backupPool}.files = cfg.identityPaths;
+
     })
   ];
 }

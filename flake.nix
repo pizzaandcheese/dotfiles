@@ -3,7 +3,7 @@
   inputs = {
     # Package repositories
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "nixpkgs/nixos-22.11";
+    nixpkgs-stable.url = "nixpkgs/nixos-23.05";
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -26,15 +26,17 @@
 #     simple-nixos-mailserver.inputs.nixpkgs.follows = "nixpkgs";
 #     simple-nixos-mailserver.inputs.utils.follows = "flake-utils";
 
-#     flake-utils.url = "github:numtide/flake-utils";
+    flake-utils.url = "github:numtide/flake-utils";
 
 #     deploy-rs.url = "github:serokell/deploy-rs";
 #     deploy-rs.inputs.nixpkgs.follows = "nixpkgs";
 #     deploy-rs.inputs.utils.follows = "flake-utils";
 
     # Secrets
-    secrets.url = "git+https://git.enclaveis.com/ryan.mcgee/secrets.git?ref=main";
+#     secrets.url = "git+https://git.enclaveis.com/ryan.mcgee/secrets?ref=main";
+    secrets.url = "git+file:///home/ryan/secrets/";
     secrets.inputs.nixpkgs.follows = "nixpkgs";
+    secrets.flake = false;
 
     agenix.url = "github:ryantm/agenix";
     agenix.inputs.nixpkgs.follows = "nixpkgs";
@@ -42,11 +44,11 @@
     homeage.url = "github:jordanisaacs/homeage";
     homeage.inputs.nixpkgs.follows = "nixpkgs";
 
-#     microvm-nix = {
-#       url = "github:astro/microvm.nix";
-#       inputs.nixpkgs.follows = "nixpkgs";
-#       inputs.flake-utils.follows = "flake-utils";
-#     };
+    microvm-nix = {
+      url = "github:astro/microvm.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
 
     # Programs
 #     neovim-flake.url = "github:jordanisaacs/neovim-flake";
@@ -460,8 +462,9 @@
           greetd.enable = true;
 #           wireguard = wireguardConf;
           waydroid.enable = true;
-          secrets.identityPaths = [ secrets.age.desktop.system.privateKeyPath ];
-        }
+#           secrets.identityPaths = [ secrets.age.system.desktop.privateKeyPath ];
+          secrets.identityPaths = [ "/home/ryan/.ssh/id_ed25519" ];
+}
       ];
 
       laptopConfig = utils.recursiveMerge [
@@ -501,7 +504,8 @@
             };
           };
 #            wireguard = wireguardConf;
-          secrets.identityPaths = [ secrets.age.framework.system.privateKeyPath ];
+#          secrets.identityPaths = [ secrets.age.framework.system.privateKeyPath ];
+         secrets.identityPaths = [ "/home/ryan/.ssh/id_ed25519" ];
 #           firefly-iii = {
 #             enable = true;
 #             appKeyFile = "/var/lib/firefly-iii/firefly-iii-appkey";
@@ -564,7 +568,10 @@
               neovim.enable = true;
             };
             shell = "bash";
-            secrets.identityPaths = [ secrets.age.framework.jd.privateKeyPath ];
+#             secrets.identityPaths = [ secrets.age.framework.jd.privateKeyPath ];
+            secrets.identityPaths = [ "/home/ryan/.ssh/id_ed25519" ];
+
+
             gpg.enable = true;
             git = {
               enable = true;
@@ -593,7 +600,7 @@
           name = "laptop";
           systemConfig = laptopConfig;
           cpuCores = 4;
-          stateVersion = "23.05";
+          stateVersion = "23.11";
         };
 
         framework = host.mkHost {
