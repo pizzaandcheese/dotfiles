@@ -356,10 +356,10 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "dirtyRev": "07eb85dc52615d613978bdf000e57f942c812a29-dirty",
-        "dirtyShortRev": "07eb85d-dirty",
-        "lastModified": 1694199507,
-        "narHash": "sha256-P9v79ghAKM5eN+p9b1rn4eQzTZlCwxqanSpgX9pMxnk=",
+        "dirtyRev": "befc9b068a67065bd09b0cdf820b96624de084f5-dirty",
+        "dirtyShortRev": "befc9b0-dirty",
+        "lastModified": 1694200307,
+        "narHash": "sha256-HD2bqZ/PIja9EIJb/LQ02dtMUebEfZiiJq2zo0GrpZg=",
         "type": "git",
         "url": "file:///home/ryan/secrets/"
       },

@@ -578,7 +578,7 @@
               allowedSignerFile = builtins.toString authorizedKeyFiles;
             };
             ssh.enable = true;
-            weechat.enable = true;
+            weechat.enable = false;
             office365 = {
               enable = false;
               onedriver.enable = true; # pkg currently broken

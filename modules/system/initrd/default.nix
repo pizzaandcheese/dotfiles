@@ -45,7 +45,7 @@ in
       boot.plymouth = {
         enable = true;
         inherit (cfg.plymouth) theme;
-        font = "${pkgs.bm-font}/share/fonts/truetype/BerkeleyMono-Regular.ttf";
+#         font = "${pkgs.bm-font}/share/fonts/truetype/BerkeleyMono-Regular.ttf";
 
         themePackages = [
           (pkgs.stdenv.mkDerivation {
